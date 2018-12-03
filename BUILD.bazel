@@ -1,0 +1,13 @@
+cc_binary(
+  name = "pony",
+  srcs = [ "pony.cpp" ],
+  deps = [ 
+    "@straw_opencensus_cpp//opencensus/trace",
+    "@straw_opencensus_cpp//opencensus/exporters/stats/stdout:stdout_exporter",
+    "@straw_opencensus_cpp//opencensus/exporters/trace/stdout:stdout_exporter",
+    "@straw_opencensus_cpp//opencensus/exporters/trace/zipkin:zipkin_exporter",
+  ],
+  linkopts = [
+    "-lpthread",
+  ]
+)
